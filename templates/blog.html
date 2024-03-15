@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+
+  <!-- work section -->
+  <section class="work_section layout_padding">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          IJODIY ISHLAR
+        </h2>
+        <p>
+          Ushbu suratlar orqali sizga korxonamizni ishlash maqsadi va yo'nalishini  ko'rsatmoqchimiz!
+        </p>
+      </div>
+      <div class="work_container layout_padding2">
+        <div class="box b-1">
+          <img src="{% static 'images/w-1.png' %}" alt="">
+        </div>
+        <div class="box b-2">
+          <img src="{% static 'images/w-2.png' %}" alt="">
+
+        </div>
+        <div class="box b-3">
+          <img src="{% static 'images/w-3.png' %}" alt="">
+
+        </div>
+        <div class="box b-4">
+          <img src="{% static 'images/w-4.png' %}" alt="">
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end work section -->
+
+  <!-- client section -->
+  <section class="client_section">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          Mijozlar fikri
+        </h2>
+      </div>
+      <div class="carousel-wrap ">
+        <div class="owl-carousel">
+          {% for blog in blogs %}
+          <div class="item">
+            <div class="box">
+              <div class="img-box">
+                <img src="{{blog.image.url}}" alt="Blog">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  {{blog.name}} <br>
+                  
+                </h5>
+                <img src="{% static 'images/quote.png' %}" alt="">
+                <p>
+                  {{blog.body}}  
+                </p>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end client section -->
+
+  <!-- target section -->
+  <section class="target_section layout_padding2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-6">
+          <div class="detail-box">
+            <h2>
+              1000+
+            </h2>
+            <h5>
+             Yillik bizneslar
+            </h5>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="detail-box">
+            <h2>
+              20000+
+            </h2>
+            <h5>
+              Tayyorlangan loyihalar
+            </h5>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="detail-box">
+            <h2>
+              10000+
+            </h2>
+            <h5>
+              Mamnun mijozlar
+            </h5>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="detail-box">
+            <h2>
+              1500+
+            </h2>
+            <h5>
+              Biznes sheriklar
+            </h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end target section -->
+  
+  
+  {% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<!-- who section -->
+
+ <section class="who_section ">
+  <div class="container">
+    {% for about in abouts %}
+    <div class="row">
+      <div class="col-md-5">
+        <div class="img-box">
+          <img src="{{about.image.url}}" alt="About">
+        </div>
+      </div>
+      <div class="col-md-7">
+        <div class="detail-box">
+          <div class="heading_container">
+            <h2>
+              Korxonamiz haqida 
+            </h2>
+          </div>
+          <p>
+            {{about.body}}
+          </p>
+          <div>
+            <a href="{% url 'index' %}">
+              Asosiy saxifa
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- end who section -->
+
+
+
+{% endblock %}
